@@ -51,7 +51,7 @@
     async asyncData() {
       const myImage = await axios.get('https://dog.ceo/api/breeds/image/random');
       const myDogs = await axios.get('https://dog.ceo/api/breeds/list');
-      return { image: myImage.data.message, dogs: medogs.data.message };
+      return { image: myImage.data.message, dogs: mydogs.data.message };
     }
   };
 </script>
