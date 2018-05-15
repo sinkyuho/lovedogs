@@ -29,6 +29,12 @@
         </figure>
       </div>
     </div>
+    <div class="box">
+      <a v-for="dog in digs" v-bind:key="dog" href= "#" class="button"></a>
+      {{dog}}
+    </div>
+
+  </div>
   </section>
 </template>
 
@@ -40,7 +46,8 @@
     },
     async asyncData() {
       const myImage = await axios.get('https://dog.ceo/api/breeds/image/random');
-      return { image: myImage.data.message };
+      const mydogs = await axios.get('https://dog.ceo/api/breeds/image/random');
+      return { image: myImage.data.message, dogs: medogs.data.message };
     }
   };
 </script>
