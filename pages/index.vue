@@ -24,20 +24,26 @@
         </div>
       </div>
       <div class="column">
-        <figure class="image is-squre">
-          <img v-bind:src="image" alt="">
-        </figure>
+        <div class="message is-info">
+          <div class="message-header">
+            <p>오늘의 강아지</p>
+          </div>
+          <div class ="message-body">
+            <figure class="image is-squre">
+              <img v-bind:src="image" alt="">
+            </figure>            
+        </div>      
       </div>
     </div>
-  </div>
+    </div>
     <div class="box">
       <h1 class="title"> 보고싶은 개 정보를 누르세요.</h1>
       <span v-for="dog in dogs" v-bind:key="dog">
 
-      <a href="#" class="button">
-        {{dog}}
-      </a> &nbsp;
-    </span>
+        <a href="#" class="button">
+          {{dog}}
+        </a> &nbsp;
+      </span>
     </div>
   </section>
 </template>
@@ -50,7 +56,6 @@
     },
     async asyncData() {
       const myImage = await axios.get('https://dog.ceo/api/breeds/image/random');
-      return { image: myImage.data.message};
       const myDogs = await axios.get('https://dog.ceo/api/breeds/list');
       return { image: myImage.data.message, dogs: myDogs.data.message };
     }
