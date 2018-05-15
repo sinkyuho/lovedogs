@@ -29,14 +29,14 @@
         </figure>
       </div>
     </div>
+  </div>
     <div class="box">
       <h1 class="title"> 보고싶은 개 정보를 누르세요.</h1>
-      <span a v-for="dog in digs"
-      v-bind:key="dog" href= "#" class="button"></span>
-      {{dog}}
+      <span a v-for="dog in digs" v-bind:key="dog" href="#" class="button">
+        {{dog}}
+      </a> &nbsp;
+    </span>
     </div>
-
-  </div>
   </section>
 </template>
 
@@ -48,7 +48,7 @@
     },
     async asyncData() {
       const myImage = await axios.get('https://dog.ceo/api/breeds/image/random');
-      const mydogs = await axios.get('https://dog.ceo/api/breeds/image/random');
+      const myDogs = await axios.get('https://dog.ceo/api/breeds/list');
       return { image: myImage.data.message, dogs: medogs.data.message };
     }
   };
