@@ -30,7 +30,9 @@
       </div>
     </div>
     <div class="box">
-      <a v-for="dog in digs" v-bind:key="dog" href= "#" class="button"></a>
+      <h1 class="title"> 보고싶은 개 정보를 누르세요.</h1>
+      <span a v-for="dog in digs"
+      v-bind:key="dog" href= "#" class="button"></span>
       {{dog}}
     </div>
 
