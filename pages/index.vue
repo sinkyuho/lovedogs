@@ -19,7 +19,7 @@
       <div class="column">
         <div class="notification is-info">
           <figure class="image is-squre">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Collage_of_Nine_Dogs.jpg" alt="">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Collage_of_Nine_Dogs.jpg" alt>
           </figure>
         </div>
       </div>
