@@ -3,8 +3,8 @@
             <article class="hero is-info">
                 <div class="hero-body">
                     <div class="container">
-                        <h1 class="title">규호는 {{dogName.toUpperCase()}}입니다.</h1>
-                        <h2 class="subtitle">잠이 많이부족합니다 재워주세요.</h2>
+                        <h1 class="title"> {{dogName.toUpperCase()}}입니다.</h1>
+                        <h2 class="subtitle">많이 사랑해주세요!</h2>
                     </div>
                 </div>
             </article>
@@ -15,7 +15,18 @@
                             <img :src="image" alt="">
                         </figure>
                     </div>
-    
+                </div>
+            </article>
+            <article class="message is-danger">
+                <div class="message-header">
+                    <p>{{dogName.toUpperCase()}}의 아품종</p>
+                </div>
+                <div class="message-body">
+                    <ol>
+                        <li v-for="subdog in dogList" :key="subdog">
+                            {{subdog.toUpperCase()}}
+                        </li>
+                    </ol>
                 </div>
             </article>
         </section>
@@ -30,12 +41,11 @@
                     const image = await axios.get(`https://dog.ceo/api/breed/${params.dog}/images/random`);
                     images.push(image.data.message);
                 }
-
-                const list = axios.get('http://dog.ceo/api/breed/${params.dog}/');
+                const list = await axios.get(`https://dog.ceo/api/breed/${params.dog}/list`);
                 return {
                     dogName: params.dog,
                     images: images,
-                    dogList : list.data.message
+                    dogList: list.data.message
                 };
             }
         };
