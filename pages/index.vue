@@ -17,7 +17,7 @@
     </article>
     <div class="columns">
       <div class="column">
-        <div class="container">
+        <div class="notification is-info">
           <figure class="image is-squre">
             <img src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Collage_of_Nine_Dogs.jpg" alt="">
           </figure>
@@ -28,19 +28,18 @@
           <div class="message-header">
             <p>오늘의 강아지</p>
           </div>
-          <div class ="message-body">
+          <div class="message-body">
             <figure class="image is-squre">
-              <img v-bind:src="image" alt="">
-            </figure>            
-        </div>      
+              <img v-bind:src="image">
+            </figure>
+          </div>
+        </div>
       </div>
-    </div>
     </div>
     <div class="box">
       <h1 class="title"> 보고싶은 개 정보를 누르세요.</h1>
       <span v-for="dog in dogs" v-bind:key="dog">
-
-        <nuxt-link :to="'/dogs/'+ dog" class="button is success is-rounded">
+        <nuxt-link :to="'/dogs/'+ dog" class="button is success is-rounded" href="#">
           {{dog}}
         </nuxt-link> &nbsp;
       </span>
